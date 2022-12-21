@@ -23,7 +23,7 @@ public class PlayerManager : MonoBehaviour
     void CreateController() {
         Debug.Log("instantiated PlayerContorller");
         switch (PlayerPrefs.GetInt("Side")) {
-            case 0: character = "Nikcy"; break;
+            case 0: character = "Nicky"; break;
             case 1: character = "LiDailin"; break; 
             case 2: character = "Hyunwoo"; break;
         }
