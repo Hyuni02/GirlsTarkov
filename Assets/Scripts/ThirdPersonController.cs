@@ -148,6 +148,11 @@ namespace StarterAssets {
             _fallTimeoutDelta = FallTimeout;
 
             pv = GetComponent<PhotonView>(); ;
+
+            if(!pv.IsMine) {
+                GetComponent<ThirdPersonShooterController>().enabled = false;
+                GetComponent<ThirdPersonController>().enabled = false;
+            }
         }
 
 
@@ -155,9 +160,9 @@ namespace StarterAssets {
         private void Update() {
             _hasAnimator = TryGetComponent(out _animator);
 
-            if (!pv.IsMine) {
-                return;
-            }
+            //if (!pv.IsMine) {
+            //    //return;
+            //}
 
             JumpAndGravity();
             GroundedCheck();
