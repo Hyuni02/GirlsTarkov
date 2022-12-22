@@ -861,9 +861,14 @@ MonoBehaviour:
   - Type: 1
     SynchronizeType: 1
     Name: MotionSpeed
+  - Type: 4
+    SynchronizeType: 0
+    Name: Aim
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0
+  - SynchronizeType: 0
+    LayerIndex: 1
 --- !u!114 &1149182984
 MonoBehaviour:
   m_ObjectHideFlags: 0
