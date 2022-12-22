@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 {
     public static GameManager Instance;
 
+    [SerializeField] GameObject Panel_Loading;
     [SerializeField] GameObject[] Panels;
     [SerializeField] GameObject[] Image_NPC;
     [SerializeField] TMP_Text Text_RoomCode;
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         PhotonNetwork.NickName = PlayerPrefs.GetString("UserName");
         CloseAllPanel();
         Open_Panel_Lobby();
+        Panel_Loading.SetActive(false);
     }
     public override void OnJoinedRoom() {
         Debug.Log("Join Room." + PhotonNetwork.CurrentRoom.Name);
