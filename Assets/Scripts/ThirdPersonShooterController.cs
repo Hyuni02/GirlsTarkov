@@ -35,7 +35,6 @@ public class ThirdPersonShooterController : MonoBehaviour {
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
         if (Physics.Raycast(ray, out RaycastHit hit, 999f, aimColliderMask)) {
-            debugTransform.position = hit.point;
             mouseWorldPosition = hit.point;
         }
 
@@ -56,6 +55,12 @@ public class ThirdPersonShooterController : MonoBehaviour {
             thirdPersonController.SetSensitivity(normalSensitivity);
             thirdPersonController.SetRotateOnMove(true);
             crosshair.SetActive(false);
+        }
+
+        if (starterAssetsInputs.shoot) {
+            if (Physics.Raycast(ray, out RaycastHit _hit, 999f, aimColliderMask)) {
+                debugTransform.position = _hit.point;
+            }
         }
 
     }
