@@ -1906,6 +1906,7 @@ GameObject:
   - component: {fileID: 2313288438643002970}
   - component: {fileID: -4675306188102706864}
   - component: {fileID: -2542688782973102622}
+  - component: {fileID: 5847752856073117869}
   m_Layer: 8
   m_Name: LiDailin
   m_TagString: Player
@@ -2241,6 +2242,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   debugTransform: {fileID: 0}
+--- !u!81 &5847752856073117869
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8304484933415266773}
+  m_Enabled: 1
 --- !u!1 &8398342627474123688
 GameObject:
   m_ObjectHideFlags: 0

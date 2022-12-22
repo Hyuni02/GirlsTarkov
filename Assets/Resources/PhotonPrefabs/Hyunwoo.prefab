@@ -696,6 +696,7 @@ GameObject:
   - component: {fileID: 3071048113623220448}
   - component: {fileID: -8539816703264738717}
   - component: {fileID: 9113939539412118737}
+  - component: {fileID: 4983197255029372440}
   m_Layer: 8
   m_Name: Hyunwoo
   m_TagString: Player
@@ -836,6 +837,7 @@ MonoBehaviour:
   jump: 0
   sprint: 0
   aim: 0
+  shoot: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -1030,6 +1032,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   debugTransform: {fileID: 0}
+--- !u!81 &4983197255029372440
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3667654084144594038}
+  m_Enabled: 1
 --- !u!1 &3740854708984604325
 GameObject:
   m_ObjectHideFlags: 0

@@ -152,6 +152,7 @@ namespace StarterAssets {
             if(!pv.IsMine) {
                 GetComponent<ThirdPersonShooterController>().enabled = false;
                 GetComponent<ThirdPersonController>().enabled = false;
+                GetComponent<AudioListener>().enabled = false;
             }
         }
 
@@ -159,10 +160,6 @@ namespace StarterAssets {
 
         private void Update() {
             _hasAnimator = TryGetComponent(out _animator);
-
-            //if (!pv.IsMine) {
-            //    //return;
-            //}
 
             JumpAndGravity();
             GroundedCheck();
