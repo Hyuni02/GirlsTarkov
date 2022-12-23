@@ -15,6 +15,7 @@ namespace StarterAssets
 		public bool aim;
 		public bool shoot;
 		public bool reload;
+		public bool respawn;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -56,10 +57,13 @@ namespace StarterAssets
 		public void OnReload(InputValue value) {
 			ReloadInput(value.isPressed);
 		}
+		public void OnRespawn(InputValue value) {
+			RespawnInput(value.isPressed);
+		}
 #endif
 
 
-        public void MoveInput(Vector2 newMoveDirection)
+		public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
 		} 
@@ -87,6 +91,9 @@ namespace StarterAssets
 		}
 		public void ReloadInput(bool newReloadState) {
 			reload = newReloadState;
+		}
+		public void RespawnInput(bool newRespawnState) {
+			respawn = newRespawnState;
 		}
 
         private void OnApplicationFocus(bool hasFocus)

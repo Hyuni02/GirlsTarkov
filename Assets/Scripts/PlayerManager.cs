@@ -27,7 +27,7 @@ public class PlayerManager : MonoBehaviour
             case 1: character = "LiDailin"; break; 
             case 2: character = "Hyunwoo"; break;
         }
-        GameObject player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", character), Vector3.zero, Quaternion.identity);
+        GameObject player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", character), RoomManager.instance.pos.position, RoomManager.instance.pos.rotation);
         FindObjectOfType<CinemachineVirtualCamera>().Follow = player.transform.GetChild(0).transform;
     }
 }

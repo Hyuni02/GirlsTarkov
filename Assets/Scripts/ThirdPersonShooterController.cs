@@ -65,16 +65,19 @@ public class ThirdPersonShooterController : MonoBehaviour {
 
         if (starterAssetsInputs.shoot) {
             if (Physics.Raycast(ray, out RaycastHit _hit, 999f, aimColliderMask)) {
-                GetComponentInChildren<Gun>().Shoot();
+                GetComponentInChildren<Gun>()?.Shoot();
                 debugTransform.position = _hit.point;
             }
             starterAssetsInputs.shoot = false;
         }
 
         if (starterAssetsInputs.reload) {
-            GetComponentInChildren<Gun>().Reload();
+            GetComponentInChildren<Gun>()?.Reload();
             starterAssetsInputs.reload= false;
         }
+    }
+
+    public void Escape() {
 
     }
 }

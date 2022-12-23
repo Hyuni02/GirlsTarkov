@@ -8,6 +8,8 @@ TagManager:
   - crosshair
   - AimCamera
   - NormalCamera
+  - EscapePoint
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

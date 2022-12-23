@@ -8,6 +8,11 @@ using System.IO;
 public class RoomManager : MonoBehaviourPunCallbacks
 {
     public static RoomManager instance;
+    public GameObject[] SpawnPoints;
+
+    [HideInInspector]
+    public Transform pos;
+    int index;
 
     private void Start() {
         if (instance) {
@@ -16,6 +21,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         }
         DontDestroyOnLoad(gameObject);
         instance = this;
+
     }
 
     public override void OnEnable() {
@@ -30,7 +36,37 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode) {
         if(scene.buildIndex== 2) {
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs","PlayerManager"),Vector3.zero, Quaternion.identity);
+            CursorLock(true);
+
+            SpawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
+            index = (int)Random.Range(0, SpawnPoints.Length);
+            pos = SpawnPoints[index].transform;
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero, Quaternion.identity);
+        }
+    }
+
+    public void Escape(GameObject _player) {
+        Debug.Log("Escape : " + PhotonNetwork.NickName);
+        Debug.Log("Escape : " + _player.name);
+        PhotonNetwork.Disconnect();
+
+        Invoke("ToLobby", 2f);
+    }
+
+    void ToLobby() {
+        CursorLock(false);
+        SceneManager.LoadScene(0);
+        Destroy(gameObject);
+    }
+
+    void CursorLock(bool state) {
+        if (state) {
+            Cursor.visible= false;
+            Cursor.lockState= CursorLockMode.Locked;
+        }
+        else {
+            Cursor.visible= true;
+            Cursor.lockState= CursorLockMode.None;
         }
     }
 }

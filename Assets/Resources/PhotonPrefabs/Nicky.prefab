@@ -689,6 +689,8 @@ MonoBehaviour:
   sprint: 0
   aim: 0
   shoot: 0
+  reload: 0
+  respawn: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1

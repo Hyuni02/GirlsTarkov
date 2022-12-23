@@ -16,14 +16,6 @@ public class Gun : MonoBehaviour
         input= GetComponentInParent<StarterAssetsInputs>();
     }
 
-    //private void Update() {
-    //    if (input.reload) {
-    //        Reload();
-    //    }
-    //    if(input.shoot) { 
-    //        Shoot();
-    //    }
-    //}
     public void Shoot() {
         if(mag.count> 0) {
             mag.count--;
