@@ -9,15 +9,18 @@ public class PlayerManager : MonoBehaviour
 {
     PhotonView pv;
     string character;
+    GameObject player;
 
     private void Awake() {
         pv = GetComponent<PhotonView>();
-    }
 
-    private void Start() {
         if (pv.IsMine) {
             CreateController();
         }
+    }
+
+    private void Start() {
+
     }
 
     void CreateController() {
@@ -27,7 +30,12 @@ public class PlayerManager : MonoBehaviour
             case 1: character = "LiDailin"; break; 
             case 2: character = "Hyunwoo"; break;
         }
-        GameObject player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", character), RoomManager.instance.pos.position, RoomManager.instance.pos.rotation);
+        player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", character), RoomManager.instance.pos.position, RoomManager.instance.pos.rotation, 0, new object[] { pv.ViewID });
         FindObjectOfType<CinemachineVirtualCamera>().Follow = player.transform.GetChild(0).transform;
+    }
+
+    public void Die() {
+        //PhotonView.Destroy(player);
+        RoomManager.instance.Die(player);
     }
 }

@@ -9,8 +9,10 @@ public class ThirdPersonShooterController : MonoBehaviour {
     CinemachineVirtualCamera aimVirtualCamera;
     [SerializeField] float normalSensitivity = 1f;
     [SerializeField] float aimSensitivity = 0.5f;
-    [SerializeField] LayerMask aimColliderMask;
-    Transform debugTransform;
+    public LayerMask aimColliderMask;
+
+    [HideInInspector]
+    public Transform debugTransform;
 
     GameObject crosshair;
 
@@ -66,11 +68,7 @@ public class ThirdPersonShooterController : MonoBehaviour {
         }
 
         if (starterAssetsInputs.shoot) {
-            if (Physics.Raycast(ray, out RaycastHit _hit, 999f, aimColliderMask)) {
-                //GetComponentInChildren<Gun>()?.Shoot();
-                inventory.main_Weapon.GetComponent<Gun>().Shoot();
-                debugTransform.position = _hit.point;
-            }
+            inventory.main_Weapon.GetComponent<Gun>().Shoot();
             starterAssetsInputs.shoot = false;
         }
 
@@ -83,4 +81,6 @@ public class ThirdPersonShooterController : MonoBehaviour {
     public void Escape() {
 
     }
+
+
 }

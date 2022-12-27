@@ -2812,7 +2812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPoints: []
-  index: 0
+  pos: {fileID: 0}
 --- !u!114 &954501875
 MonoBehaviour:
   m_ObjectHideFlags: 0

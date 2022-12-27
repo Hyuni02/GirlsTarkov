@@ -53,6 +53,14 @@ public class RoomManager : MonoBehaviourPunCallbacks
         Invoke("ToLobby", 2f);
     }
 
+    public void Die(GameObject _player) {
+        Debug.Log("Die : " + _player.name);
+        Debug.Log("Die : " + PhotonNetwork.NickName);
+        PhotonNetwork.Disconnect();
+
+        Invoke("ToLobby", 2f);
+    }
+
     void ToLobby() {
         CursorLock(false);
         SceneManager.LoadScene(0);
