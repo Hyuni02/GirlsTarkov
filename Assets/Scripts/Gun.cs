@@ -10,13 +10,20 @@ public class Gun : MonoBehaviour
     [SerializeField] Magazine mag;
 
     StarterAssetsInputs input;
+    Inventory inventory;
     int magindex = 0;
 
     private void Start() {
         input= GetComponentInParent<StarterAssetsInputs>();
+        inventory = GetComponentInParent<Inventory>();
     }
 
     public void Shoot() {
+        if(mag == null) {
+            Debug.Log("Mag is Null");
+            return;
+        }
+
         if(mag.count> 0) {
             mag.count--;
             Debug.Log("Fire Bullet from " + mag.name);
@@ -27,11 +34,16 @@ public class Gun : MonoBehaviour
         input.shoot = false;
     }
     public void Reload() {
-        magindex++;
-        if (magindex == transform.childCount) {
-            magindex = 0;
+        //±âÁ¸ÀÇ ÅºÃ¢ Á¦°Å(¾øÀ¸¸ç ³Ñ±è)
+        if(mag != null) {
+            mag.transform.SetParent(inventory.vset.transform);
         }
-        mag = transform.GetChild(magindex).GetComponent<Magazine>();
+
+        //»õ·Î¿î ÅºÃ¢ ÀåÂø
+        Transform newMag = GetComponentInParent<Inventory>().vset.transform.GetChild(0);
+        mag =  newMag.GetComponent<Magazine>();
+        newMag.SetParent(transform);
+
         Debug.Log("Change Mag to " + mag.name);
         input.reload = false;
     }

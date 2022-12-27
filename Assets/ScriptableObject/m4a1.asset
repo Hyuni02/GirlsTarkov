@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 603623664be284e4cbbc1027238fec6a, type: 3}
-  m_Name: ak12
+  m_Name: m4a1
   m_EditorClassIdentifier: 
   Single: 1
-  SemiAuto: 0
+  SemiAuto: 1
   FullAuto: 1
-  GunName: AK-12
-  GunDescription: "\uB9C8\uC77C\uB9AC"
+  GunName: M4A1
+  GunDescription: "Anti-rain\uD300 \uB9AC\uB354"
   Damage: 44
   ammoType: 1
   RPM: 600
   range: 600
   MOA: 3
-  Recoil: 1
+  Recoil: 5
   actionType: 0
   reloadType: 0
   BulletInChamber: 0

@@ -6,22 +6,24 @@ using StarterAssets;
 using UnityEngine.InputSystem;
 
 public class ThirdPersonShooterController : MonoBehaviour {
-    [SerializeField] CinemachineVirtualCamera aimVirtualCamera;
+    CinemachineVirtualCamera aimVirtualCamera;
     [SerializeField] float normalSensitivity = 1f;
     [SerializeField] float aimSensitivity = 0.5f;
     [SerializeField] LayerMask aimColliderMask;
-    [SerializeField] Transform debugTransform;
+    Transform debugTransform;
 
     GameObject crosshair;
 
     ThirdPersonController thirdPersonController;
     StarterAssetsInputs starterAssetsInputs;
     Animator animator;
+    Inventory inventory;
 
     private void Awake() {
         thirdPersonController = GetComponent<ThirdPersonController>();
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         animator = GetComponent<Animator>();
+        inventory= GetComponent<Inventory>();
     }
 
     private void Start() {
@@ -65,14 +67,15 @@ public class ThirdPersonShooterController : MonoBehaviour {
 
         if (starterAssetsInputs.shoot) {
             if (Physics.Raycast(ray, out RaycastHit _hit, 999f, aimColliderMask)) {
-                GetComponentInChildren<Gun>()?.Shoot();
+                //GetComponentInChildren<Gun>()?.Shoot();
+                inventory.main_Weapon.GetComponent<Gun>().Shoot();
                 debugTransform.position = _hit.point;
             }
             starterAssetsInputs.shoot = false;
         }
 
         if (starterAssetsInputs.reload) {
-            GetComponentInChildren<Gun>()?.Reload();
+            inventory.main_Weapon.GetComponent<Gun>().Reload();
             starterAssetsInputs.reload= false;
         }
     }
