@@ -12,6 +12,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     [HideInInspector]
     public Transform pos;
+    public bool escape;
+
     int index;
 
     private void Start() {
@@ -46,22 +48,29 @@ public class RoomManager : MonoBehaviourPunCallbacks
     }
 
     public void Escape(GameObject _player) {
+        escape= true;
         Debug.Log("Escape : " + PhotonNetwork.NickName);
         Debug.Log("Escape : " + _player.name);
         PhotonNetwork.Disconnect();
 
-        Invoke("ToLobby", 2f);
+        Invoke("ToResultScene", 2f);
     }
 
     public void Die(GameObject _player) {
+        escape= false;
         Debug.Log("Die : " + _player.name);
         Debug.Log("Die : " + PhotonNetwork.NickName);
         PhotonNetwork.Disconnect();
 
-        Invoke("ToLobby", 2f);
+        Invoke("ToResultScene", 2f);
     }
 
-    void ToLobby() {
+    void ToResultScene() {
+        CursorLock(false);
+        SceneManager.LoadScene(3);
+    }
+
+    public void ToLobby() {
         CursorLock(false);
         SceneManager.LoadScene(0);
         Destroy(gameObject);
