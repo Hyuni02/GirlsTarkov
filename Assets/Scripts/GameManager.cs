@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
 
     void Start() {
+        Panel_Loading.SetActive(true);
+
         if (!PlayerPrefs.HasKey("UserName")) {
             SceneManager.LoadScene(1);
             return;
