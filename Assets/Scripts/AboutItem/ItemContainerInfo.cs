@@ -30,8 +30,7 @@ public class ItemContainerInfo : ItemInfo
         for(int i=0;i<transform.childCount; i++) {
             currentSize += transform.GetChild(i).GetComponent<ItemInfo>().size;
             totalWeight += transform.GetChild(i).GetComponent<ItemInfo>().weight;
-
-            totalWeight += selfWeight;
         }
+        totalWeight += selfWeight;
     }
 }

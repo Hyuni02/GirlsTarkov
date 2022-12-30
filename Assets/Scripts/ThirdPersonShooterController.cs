@@ -60,6 +60,13 @@ public class ThirdPersonShooterController : MonoBehaviour {
                 Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
 
                 transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
+
+                if (starterAssetsInputs.shoot) {
+                    if (inventory.main_Weapon != null) {
+                        inventory.main_Weapon.GetComponent<Gun>().Shoot();
+                    }
+                    starterAssetsInputs.shoot = false;
+                }
             }
         }
         else {
@@ -71,12 +78,7 @@ public class ThirdPersonShooterController : MonoBehaviour {
             animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 20f));
         }
 
-        if (starterAssetsInputs.shoot) {
-            if (inventory.main_Weapon != null) {
-                inventory.main_Weapon.GetComponent<Gun>().Shoot();
-            }
-            starterAssetsInputs.shoot = false;
-        }
+
 
         if (starterAssetsInputs.reload) {
             if(inventory.main_Weapon != null) {

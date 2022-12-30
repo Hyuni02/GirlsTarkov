@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour
 {
     public ArmorInfo Helmet;
     public ArmorInfo Armor;
-    public GameObject main_Weapon;
+    public Gun main_Weapon;
     //public GameObject sub_Weapon;
 
     //public GameObject vest;

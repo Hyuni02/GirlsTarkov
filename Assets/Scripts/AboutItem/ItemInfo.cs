@@ -63,9 +63,14 @@ public class ItemInfo : MonoBehaviour
         gameObject.AddComponent<Rigidbody>();
 
         picked = false;
+        transform.SetParent(null);
+
+        Debug.Log(ItemName + " has Thrown");
     }
     //공간에서 공간으로 아이템 이동하기
-    public virtual void MoveItem(Transform from, Transform to) { 
-    
+    public virtual void MoveItem(Transform from, Transform to) {
+        transform.SetParent(to);
+        from.GetComponent<ItemContainerInfo>()?.UpdateContainerState();
+        to.GetComponent<ItemContainerInfo>()?.UpdateContainerState();
     }
 }
