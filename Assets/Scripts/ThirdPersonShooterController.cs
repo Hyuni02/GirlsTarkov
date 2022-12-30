@@ -4,12 +4,14 @@ using UnityEngine;
 using Cinemachine;
 using StarterAssets;
 using UnityEngine.InputSystem;
+using UnityEditor.Rendering;
 
 public class ThirdPersonShooterController : MonoBehaviour {
     CinemachineVirtualCamera aimVirtualCamera;
     [SerializeField] float normalSensitivity = 1f;
     [SerializeField] float aimSensitivity = 0.5f;
     public LayerMask aimColliderMask;
+    public LayerMask interactColliderMask;
 
     [HideInInspector]
     public Transform debugTransform;
@@ -45,18 +47,20 @@ public class ThirdPersonShooterController : MonoBehaviour {
         }
 
         if (starterAssetsInputs.aim) {
-            aimVirtualCamera.gameObject.SetActive(true);
-            thirdPersonController.SetSensitivity(aimSensitivity);
-            thirdPersonController.SetRotateOnMove(false);
-            crosshair.gameObject.SetActive(true);
-            animator.SetBool("Aim", true);
-            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1),1f,Time.deltaTime * 20f));
+            if (inventory.main_Weapon != null) {
+                aimVirtualCamera.gameObject.SetActive(true);
+                thirdPersonController.SetSensitivity(aimSensitivity);
+                thirdPersonController.SetRotateOnMove(false);
+                crosshair.gameObject.SetActive(true);
+                animator.SetBool("Aim", true);
+                animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 1f, Time.deltaTime * 20f));
 
-            Vector3 worldAimTarget = mouseWorldPosition;
-            worldAimTarget.y = transform.position.y;
-            Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
+                Vector3 worldAimTarget = mouseWorldPosition;
+                worldAimTarget.y = transform.position.y;
+                Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
 
-            transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
+                transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
+            }
         }
         else {
             aimVirtualCamera.gameObject.SetActive(false);
@@ -68,13 +72,24 @@ public class ThirdPersonShooterController : MonoBehaviour {
         }
 
         if (starterAssetsInputs.shoot) {
-            inventory.main_Weapon.GetComponent<Gun>().Shoot();
+            if (inventory.main_Weapon != null) {
+                inventory.main_Weapon.GetComponent<Gun>().Shoot();
+            }
             starterAssetsInputs.shoot = false;
         }
 
         if (starterAssetsInputs.reload) {
-            inventory.main_Weapon.GetComponent<Gun>().Reload();
+            if(inventory.main_Weapon != null) {
+                inventory.main_Weapon.GetComponent<Gun>().Reload();
+            }
             starterAssetsInputs.reload= false;
+        }
+
+        if (starterAssetsInputs.interact) {
+            if (Physics.Raycast(ray, out RaycastHit _hit, 15f, interactColliderMask)) {
+                _hit.collider.GetComponent<ItemInfo>().Interact(gameObject);
+            }
+            starterAssetsInputs.interact = false;
         }
     }
 

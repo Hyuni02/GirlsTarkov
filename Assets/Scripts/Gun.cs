@@ -45,16 +45,16 @@ public class Gun : MonoBehaviour
 
     public void Reload() {
         //±âÁ¸ÀÇ ÅºÃ¢ Á¦°Å(¾øÀ¸¸ç ³Ñ±è)
-        if(mag != null) {
-            mag.transform.SetParent(inventory.vest.transform);
-        }
+        //if(mag != null) {
+        //    mag.transform.SetParent(inventory.vest.transform);
+        //}
 
-        //»õ·Î¿î ÅºÃ¢ ÀåÂø
-        Transform newMag = GetComponentInParent<Inventory>().vest.transform.GetChild(0);
-        mag =  newMag.GetComponent<Magazine>();
-        newMag.SetParent(transform);
+        ////»õ·Î¿î ÅºÃ¢ ÀåÂø
+        //Transform newMag = GetComponentInParent<Inventory>().vest.transform.GetChild(0);
+        //mag =  newMag.GetComponent<Magazine>();
+        //newMag.SetParent(transform);
 
-        Debug.Log("Change Mag to " + mag.name);
-        input.reload = false;
+        //Debug.Log("Change Mag to " + mag.name);
+        //input.reload = false;
     }
 }

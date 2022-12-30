@@ -10,6 +10,7 @@ TagManager:
   - NormalCamera
   - EscapePoint
   - SpawnPoint
+  - item
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - Item
   - Character
   - Ground
   - 

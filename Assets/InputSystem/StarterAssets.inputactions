@@ -69,7 +69,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Respawn",
+                    "name": "Interact",
                     "type": "Button",
                     "id": "ac62ee01-9860-44dd-90ed-b8a7f4cf06eb",
                     "expectedControlType": "Button",
@@ -295,7 +295,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
-                    "action": "Respawn",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
