@@ -9,6 +9,10 @@ public class Gun : ItemInfo
     [SerializeField] GunData data;
     [SerializeField] Magazine mag;
 
+    public ItemInfo muzzle;
+    public ItemInfo grip;
+    public ItemInfo sight;
+
     StarterAssetsInputs input;
     Inventory inventory;
     ThirdPersonShooterController thirdPersonShooterController;

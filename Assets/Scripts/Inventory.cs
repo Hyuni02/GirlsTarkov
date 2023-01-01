@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+    public Sprite PlayerIcon;
+
     public ArmorInfo Helmet;
     public ArmorInfo Armor;
     public Gun main_Weapon;

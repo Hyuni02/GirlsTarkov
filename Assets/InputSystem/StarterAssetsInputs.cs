@@ -16,6 +16,7 @@ namespace StarterAssets
 		public bool shoot;
 		public bool reload;
 		public bool interact;
+		public bool inventory;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -59,11 +60,14 @@ namespace StarterAssets
 		}
 		public void OnInteract(InputValue value) {
 			InteractInput(value.isPressed);
-		}
+        }
+        public void OnInventory(InputValue value) {
+            InventoryInput(value.isPressed);
+        }
 #endif
 
 
-		public void MoveInput(Vector2 newMoveDirection)
+        public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
 		} 
@@ -94,6 +98,9 @@ namespace StarterAssets
 		}
 		public void InteractInput(bool newInteractState) {
 			interact = newInteractState;
+		}
+		public void InventoryInput(bool newInventoryState) {
+			inventory = newInventoryState;
 		}
 
         private void OnApplicationFocus(bool hasFocus)

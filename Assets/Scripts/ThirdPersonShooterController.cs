@@ -93,6 +93,17 @@ public class ThirdPersonShooterController : MonoBehaviour {
             }
             starterAssetsInputs.interact = false;
         }
+
+        if (starterAssetsInputs.inventory) {
+            InventoryViewer invenViewer = GetComponent<InventoryViewer>();
+            if (invenViewer.open) {
+                invenViewer.CloseInventory();
+            }
+            else {
+                invenViewer.OpenInventory();
+            }
+            starterAssetsInputs.inventory = false;
+        }
     }
 
     public void Escape() {
