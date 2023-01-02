@@ -3,10 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class UI_Inventory : MonoBehaviour
-{
+public class UI_Inventory : MonoBehaviour, IPointerClickHandler {
+
+    public static UI_Inventory instance;
+
+    [Header("Right Click Menu")]
+    public GameObject RClickMenu;
+    public Button button_Discard;
+
     [Header("Panel_Player")]
     public GameObject Panel_Player;
     public Image Image_Player;
@@ -29,6 +37,10 @@ public class UI_Inventory : MonoBehaviour
     [Header("Panel_Loot")]
     public GameObject Panel_Loot;
 
+    private void Awake() {
+        instance = this;
+        RClickMenu.SetActive(false);
+    }
 
     public void UpdateAll(Inventory inven) {
         UpdatePlayer(inven);
@@ -39,24 +51,31 @@ public class UI_Inventory : MonoBehaviour
         //캐릭터 아이콘
         Image_Player.sprite = inven.PlayerIcon;
         //헬멧
-        if (inven.Helmet != null)
+        if (inven.Helmet != null) {
             Image_Helmet.sprite = inven.Helmet.GetComponent<ItemInfo>().ItemIcon;
+            Image_Helmet.GetComponent<Clickable>().info = inven.Helmet.GetComponent<ItemInfo>();
+        }
         else
             Image_Helmet.sprite = null;
         //방어구
-        if(inven.Armor != null)
+        if (inven.Armor != null) {
             Image_Armor.sprite = inven.Armor.GetComponent<ItemInfo>().ItemIcon;
+            Image_Armor.GetComponent<Clickable>().info = inven.Armor.GetComponent<ItemInfo>();
+        }
         else
             Image_Armor.sprite = null;
         //가방
         if (inven.bag != null) {
             Image_Bag.sprite = inven.bag.GetComponent<ItemInfo>().ItemIcon;
+            Image_Bag.GetComponent<Clickable>().info = inven.bag.GetComponent<ItemInfo>();
+
         }
         else
             Image_Bag.sprite = null;
         //주무기, 부착물
         if (inven.main_Weapon != null) {
             Image_PrimaryWeapon.sprite = inven.main_Weapon.GetComponent<ItemInfo>().ItemIcon;
+            Image_PrimaryWeapon.GetComponent<Clickable>().info = inven.main_Weapon.GetComponent<ItemInfo>();
             //Image_Muzzle.sprite = inven.main_Weapon.muzzle.GetComponent<ItemInfo>().ItemIcon;
             //Image_Grip.sprite = inven.main_Weapon.grip.GetComponent<ItemInfo>().ItemIcon;
             //Image_Sight.sprite = inven.main_Weapon.sight.GetComponent<ItemInfo>().ItemIcon;
@@ -91,6 +110,7 @@ public class UI_Inventory : MonoBehaviour
                 Image item = Instantiate(Image_Item).GetComponent<Image>();
                 item.sprite = inven.bag.transform.GetChild(i).GetComponent<ItemInfo>().ItemIcon;
                 item.transform.SetParent(Image_Inbag.transform);
+                item.GetComponent<Clickable>().info = inven.bag.transform.GetChild(i).GetComponent<ItemInfo>();
             }
 
             Group.SetActive(true);
@@ -101,5 +121,30 @@ public class UI_Inventory : MonoBehaviour
     }
     public void UpdateLoot(Inventory inven = null) {
 
+    }
+
+    public void OnPointerClick(PointerEventData eventData) {
+        if(eventData.button == PointerEventData.InputButton.Left) {
+            CloseRClickMenu();
+        }
+    }
+
+    ItemInfo target;
+    public void OpenRClickMenu(ItemInfo info) {
+        Debug.Log("Right Click " + info.ItemName);
+        target = info;
+
+        RClickMenu.GetComponent<RectTransform>().transform.position = Mouse.current.position.ReadValue();
+
+        RClickMenu.SetActive(true);
+    }
+    public void Discard() {
+        CloseRClickMenu();
+        Debug.Log("이제 여기를 구현하면 된다");
+        
+        //target.Thrown();
+    }
+    public void CloseRClickMenu() {
+        RClickMenu.SetActive(false);
     }
 }
