@@ -3551,6 +3551,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bag1
       objectReference: {fileID: 0}
+    - target: {fileID: 3430667750871300797, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca376144db47c4640ac02a108f6e07ce, type: 3}
 --- !u!33 &370437326696158936
@@ -3700,6 +3705,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Helmet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151075047299397699, guid: 2cf1e7001bef9b64d93d1364d3c41773,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cf1e7001bef9b64d93d1364d3c41773, type: 3}
@@ -3898,6 +3908,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8312609783457634453, guid: 1aceeec2826f86d40a607a54a617afe8,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aceeec2826f86d40a607a54a617afe8, type: 3}
 --- !u!1001 &4408558265162624133
@@ -3967,6 +3982,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8324506638809392209, guid: cd5b007b4f55e8f4888dbc3ad40b627a,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd5b007b4f55e8f4888dbc3ad40b627a, type: 3}
 --- !u!1001 &4594225826929540494
@@ -3976,6 +3996,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4544046157941490188, guid: 3239e54e16918a0448f741e67dc7604c,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4594225826056103203, guid: 3239e54e16918a0448f741e67dc7604c,
         type: 3}
       propertyPath: m_RootOrder
@@ -4105,6 +4130,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armor
       objectReference: {fileID: 0}
+    - target: {fileID: 7058410117407759132, guid: bda72801f8bb6ff4fb2d5ee04cda5f81,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bda72801f8bb6ff4fb2d5ee04cda5f81, type: 3}
 --- !u!1001 &5244726326521762681
@@ -4114,6 +4144,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3742964281747217209, guid: 76d33bd56336f314598ed1deaf01e794,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5244726324841984930, guid: 76d33bd56336f314598ed1deaf01e794,
         type: 3}
       propertyPath: m_RootOrder
@@ -4183,6 +4218,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4967485477612174501, guid: 6adb58605a6242f4992d4fa71f5c4ffd,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5836116115457677906, guid: 6adb58605a6242f4992d4fa71f5c4ffd,
         type: 3}
       propertyPath: m_Name

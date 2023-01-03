@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,5 +20,37 @@ public class Inventory : MonoBehaviour
         //main_Weapon = GetComponentInChildren<Gun>().gameObject;
         //vest = GameObject.Find("Vest1");
         //bag = GameObject.Find("Bag1").GetComponent<ItemContainerInfo>();
-    } 
+    }
+
+
+    [PunRPC]
+    void RPC_Pick(int _itemviewid, int _ownerviewid) {
+        ItemInfo target = PhotonView.Find(_itemviewid).GetComponent<ItemInfo>();
+        target.transform.parent = PhotonView.Find(_ownerviewid).transform;
+
+        BoxCollider col = target.GetComponent<BoxCollider>();
+        MeshRenderer rend = target.GetComponent<MeshRenderer>();
+        Rigidbody rb = target.GetComponent<Rigidbody>();
+
+        col.enabled = false;
+        rend.enabled = false;
+        Destroy(rb);
+
+        //target.gameObject.SetActive(false);
+    }
+    [PunRPC]
+    void RPC_Thrown(int _itemviewid) {
+        ItemInfo target = PhotonView.Find(_itemviewid).GetComponent<ItemInfo>();
+        target.transform.parent = null;
+
+        BoxCollider col = target.GetComponent<BoxCollider>();
+        MeshRenderer rend = target.GetComponent<MeshRenderer>();
+        Rigidbody rb = target.GetComponent<Rigidbody>();
+
+        col.enabled = true;
+        rend.enabled = true;
+        target.gameObject.AddComponent<Rigidbody>();
+
+        //target.gameObject.SetActive(true);
+    }
 }
