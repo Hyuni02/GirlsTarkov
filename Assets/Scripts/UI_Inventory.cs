@@ -131,7 +131,7 @@ public class UI_Inventory : MonoBehaviour, IPointerClickHandler {
 
     ItemInfo target;
     public void OpenRClickMenu(ItemInfo info) {
-        Debug.Log("Right Click " + info.ItemName);
+        //Debug.Log("Right Click " + info.ItemName);
         target = info;
 
         RClickMenu.GetComponent<RectTransform>().transform.position = Mouse.current.position.ReadValue();
@@ -140,9 +140,8 @@ public class UI_Inventory : MonoBehaviour, IPointerClickHandler {
     }
     public void Discard() {
         CloseRClickMenu();
-        Debug.Log("이제 여기를 구현하면 된다");
-        
-        //target.Thrown();
+        //Debug.Log("이제 여기를 구현하면 된다");
+        target.Thrown();
     }
     public void CloseRClickMenu() {
         RClickMenu.SetActive(false);

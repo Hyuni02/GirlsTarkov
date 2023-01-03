@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,11 +16,13 @@ public class ItemInfo : MonoBehaviour
     public float weight;
 
     protected bool picked;
+    [SerializeField]
+    protected bool equiped;
 
     [HideInInspector]
-    BoxCollider col;
-    MeshRenderer rend;
-    Rigidbody rb;
+    protected BoxCollider col;
+    protected MeshRenderer rend;
+    protected Rigidbody rb;
 
     public virtual void Interact(GameObject player) {
         Inventory playerInventory = player.GetComponent<Inventory>();
@@ -48,7 +50,7 @@ public class ItemInfo : MonoBehaviour
         Destroy(rb);
 
         transform.SetParent(parent);
-        Debug.Log("Pick" + ItemName);
+        Debug.Log("Pick " + ItemName);
         parent.GetComponent<ItemContainerInfo>()?.UpdateContainerState();
 
         picked = true;
@@ -64,8 +66,11 @@ public class ItemInfo : MonoBehaviour
         gameObject.AddComponent<Rigidbody>();
 
         picked = false;
+        Transform p = transform.parent;
         transform.SetParent(null);
 
+        p.GetComponent<ItemContainerInfo>()?.UpdateContainerState();
+        UI_Inventory.instance.UpdateAll(p.GetComponentInParent<Inventory>());
         Debug.Log(ItemName + " has Thrown");
     }
     //공간에서 공간으로 아이템 이동하기

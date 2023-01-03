@@ -4,7 +4,7 @@ using UnityEngine;
 using Cinemachine;
 using StarterAssets;
 using UnityEngine.InputSystem;
-using UnityEditor.Rendering;
+//using UnityEditor.Rendering;
 
 public class ThirdPersonShooterController : MonoBehaviour {
     CinemachineVirtualCamera aimVirtualCamera;

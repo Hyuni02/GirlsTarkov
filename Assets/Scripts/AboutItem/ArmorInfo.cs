@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Sprites;
 using UnityEngine;
 
 public class ArmorInfo : ItemInfo
@@ -16,17 +15,30 @@ public class ArmorInfo : ItemInfo
             case Type.helmet:
                 if(playerInventory.Helmet == null) {
                     playerInventory.Helmet = this;
+                    equiped = true; 
                     Pick(player.transform);
                 }
                 return;
             case Type.armor:
                 if(playerInventory.Armor == null) {
                     playerInventory.Armor = this;
+                    equiped= true;
                     Pick(player.transform);
                 }
                 return;
         }
         //가방에 넣기
         base.Interact(player);
+    }
+
+    public override void Thrown() {
+        if (equiped) {
+            if(type == Type.helmet)
+                transform.parent.GetComponent<Inventory>().Helmet = null;
+            if (type == Type.armor)
+                transform.parent.GetComponent<Inventory>().Armor = null;
+        }
+
+        base.Thrown();
     }
 }

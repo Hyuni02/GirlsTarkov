@@ -17,6 +17,7 @@ public class ItemContainerInfo : ItemInfo
         Inventory playerInventory = player.GetComponent<Inventory>();
         if(playerInventory.bag == null) {
             playerInventory.bag = this;
+            equiped = true;
             Pick(player.transform);
             return;
         }
@@ -32,5 +33,13 @@ public class ItemContainerInfo : ItemInfo
             totalWeight += transform.GetChild(i).GetComponent<ItemInfo>().weight;
         }
         totalWeight += selfWeight;
+        Debug.Log("UpdateState " + ItemName);
+    }
+
+    public override void Thrown() {
+        if(equiped) {
+            transform.parent.GetComponent<Inventory>().bag = null;  
+        }
+        base.Thrown();
     }
 }

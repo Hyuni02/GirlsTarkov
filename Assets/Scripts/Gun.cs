@@ -105,7 +105,7 @@ public class Gun : ItemInfo
         if (playerInventory.main_Weapon == null) {
             playerInventory.main_Weapon = this;
             Pick(player.transform);
-
+            equiped= true;
             inventory = playerInventory;
             input = player.GetComponent<StarterAssetsInputs>();
             thirdPersonShooterController = player.GetComponent<ThirdPersonShooterController>();
@@ -113,6 +113,14 @@ public class Gun : ItemInfo
             return;
         }
         base.Interact(player);
+    }
+
+    public override void Thrown() {
+        if (equiped) {
+            transform.parent.GetComponent<Inventory>().main_Weapon = null;
+        }
+        
+        base.Thrown();
     }
 
 }
