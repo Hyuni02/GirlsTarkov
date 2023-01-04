@@ -65,7 +65,8 @@ public class ItemInfo : MonoBehaviour
             return;
         }
         else {
-            pv.RPC("RPC_Pick", RpcTarget.All, GetComponent<PhotonView>().ViewID, parent.GetComponent<PhotonView>().ViewID);
+            if (!pv.IsMine)
+                pv.RPC("RPC_Pick", RpcTarget.All, GetComponent<PhotonView>().ViewID, parent.GetComponent<PhotonView>().ViewID);
         }
     }
 
@@ -82,6 +83,7 @@ public class ItemInfo : MonoBehaviour
         gameObject.AddComponent<Rigidbody>();
 
         picked = false;
+        equiped = false;
         Transform p = transform.parent;
         transform.SetParent(null);
 
@@ -97,7 +99,8 @@ public class ItemInfo : MonoBehaviour
             return;
         }
         else {
-            pv.RPC("RPC_Thrown", RpcTarget.All, GetComponent<PhotonView>().ViewID);
+            if(!pv.IsMine)
+                pv.RPC("RPC_Thrown", RpcTarget.All, GetComponent<PhotonView>().ViewID);
         }
     }
     //공간에서 공간으로 아이템 이동하기

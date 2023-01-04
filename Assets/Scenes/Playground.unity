@@ -2129,6 +2129,110 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1339075003
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 261714278605737321, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 261714278605737321, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 261714278605737321, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.49999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 261714278605737321, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 261714278605737321, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 261714278605737321, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 261714278605737321, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 261714278605737321, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 261714278605737321, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 261714278605737321, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 261714278605737321, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 261714278605737326, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: size
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 261714278605737326, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: MaxSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 261714278605737326, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: ItemCode
+      value: 3002
+      objectReference: {fileID: 0}
+    - target: {fileID: 261714278605737326, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: ItemName
+      value: Bag2
+      objectReference: {fileID: 0}
+    - target: {fileID: 261714278605737326, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: selfWeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 261714278605737326, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: ItemDescription
+      value: test bag2
+      objectReference: {fileID: 0}
+    - target: {fileID: 261714278605737327, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: m_Name
+      value: Bag2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430667750871300797, guid: ca376144db47c4640ac02a108f6e07ce,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ca376144db47c4640ac02a108f6e07ce, type: 3}
 --- !u!1 &1358738753
 GameObject:
   m_ObjectHideFlags: 0

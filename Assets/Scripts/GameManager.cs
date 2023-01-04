@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
     public override void OnJoinedRoom() {
         Debug.Log("Join Room." + PhotonNetwork.CurrentRoom.Name);
+        
         Text_RoomCode.text = "Room." + PhotonNetwork.CurrentRoom.Name;
 
         Player[] players = PhotonNetwork.PlayerList;
@@ -68,6 +69,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
     public override void OnLeftRoom() {
         Panels[2].SetActive(false);
+        Button_Start.SetActive(false) ;
+        Text_RoomCode.text = "Connecting...";
     }
     public override void OnCreateRoomFailed(short returnCode, string message) {
         Debug.LogAssertion(returnCode + " : " + message);
