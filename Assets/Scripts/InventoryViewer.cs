@@ -22,7 +22,8 @@ public class InventoryViewer : MonoBehaviour
     }
 
     public void OpenInventory() {
-        uI_Inventory.GetComponent<UI_Inventory>().UpdateAll(inventory);
+        uI_Inventory.GetComponent<UI_Inventory>().UpdateAll();
+        uI_Inventory.GetComponent<UI_Inventory>().UpdateLoot();
         open= true;
         uI_Inventory.SetActive(true);
         Cursor.lockState = CursorLockMode.None;

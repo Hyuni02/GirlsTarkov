@@ -5,10 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEditor.SceneManagement;
 
 public class ItemInfo : MonoBehaviour
 {
-    public enum Type { item, bag, gun, mag, helmet, armor, ammo}
+    public enum Type { item, bag, gun, mag, helmet, armor, ammo, box, body}
     public Type type;
     public string ItemName;
     public int ItemCode;
@@ -50,7 +51,7 @@ public class ItemInfo : MonoBehaviour
 
         col.enabled = false;
         rend.enabled = false;
-        Destroy(rb);
+        rb.useGravity= false;
 
         transform.SetParent(parent);
         Debug.Log("Pick " + ItemName);
@@ -72,7 +73,8 @@ public class ItemInfo : MonoBehaviour
 
     //바닥으로 아이템 버리기
     public virtual void Thrown() {
-        pv = transform.root.GetComponent<PhotonView>();
+        //pv = transform.root.GetComponent<PhotonView>();
+        pv = RoomManager.instance.LocalPlayer.GetComponent<PhotonView>();
 
         col = GetComponent<BoxCollider>();
         rend = GetComponent<MeshRenderer>();
@@ -80,7 +82,8 @@ public class ItemInfo : MonoBehaviour
 
         col.enabled = true;
         rend.enabled = true;
-        gameObject.AddComponent<Rigidbody>();
+        rb.useGravity = true;
+        rb.velocity= Vector3.zero;
 
         picked = false;
         equiped = false;
@@ -88,12 +91,21 @@ public class ItemInfo : MonoBehaviour
         transform.SetParent(null);
 
         p.GetComponent<ItemContainerInfo>()?.UpdateContainerState();
-        UI_Inventory.instance.UpdateAll(p.GetComponentInParent<Inventory>());
+        UI_Inventory.instance.UpdateAll();
+        if(p.parent!= null) {
+            UI_Inventory.instance.UpdateLoot(p.parent.GetComponent<Inventory>());
+
+        }
         Debug.Log(ItemName + " has Thrown");
+        
+        transform.position = new Vector3(
+            p.position.x,
+            p.position.y + 2,
+            p.position.z);
 
         //네트워크 부분
-        
-        Debug.Log(pv.name);
+
+        //Debug.Log(pv.name);
         if (pv == null) {
             Debug.Log("Cant Find Parent's PV");
             return;

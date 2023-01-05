@@ -9,7 +9,7 @@ public class ItemContainerInfo : ItemInfo
     public float selfWeight;
     public float totalWeight;
 
-    private void Start() {
+    public virtual void Start() {
         UpdateContainerState();
     }
 
@@ -25,7 +25,7 @@ public class ItemContainerInfo : ItemInfo
         base.Interact(player);
     }
 
-    public void UpdateContainerState() {
+    public virtual void UpdateContainerState() {
         currentSize = 0;
         totalWeight = 0;
         for(int i=0;i<transform.childCount; i++) {

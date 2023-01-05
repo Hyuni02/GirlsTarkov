@@ -34,7 +34,7 @@ public class Inventory : MonoBehaviour
 
         col.enabled = false;
         rend.enabled = false;
-        Destroy(rb);
+        rb.useGravity= false;
 
         //target.gameObject.SetActive(false);
     }
@@ -49,7 +49,7 @@ public class Inventory : MonoBehaviour
 
         col.enabled = true;
         rend.enabled = true;
-        target.gameObject.AddComponent<Rigidbody>();
+        rb.useGravity = true;
 
         //target.gameObject.SetActive(true);
     }

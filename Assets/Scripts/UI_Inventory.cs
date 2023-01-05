@@ -36,18 +36,27 @@ public class UI_Inventory : MonoBehaviour, IPointerClickHandler {
 
     [Header("Panel_Loot")]
     public GameObject Panel_Loot;
+    public GameObject Group_Equip;
+    public GameObject Group_PrimaryWeapon;
+    public GameObject Group_Bag;
+    public TMP_Text Text_LootSize;
+    public Image Image_InLoot;
+    public Image Image_InLoot_Helmet;
+    public Image Image_InLoot_Armor;
+    public Image Image_InLoot_Bag;
+    public Image Image_InLoot_PrimaryWeapon;
 
     private void Awake() {
         instance = this;
         RClickMenu.SetActive(false);
     }
 
-    public void UpdateAll(Inventory inven) {
-        UpdatePlayer(inven);
-        UpdateBag(inven);
-        UpdateLoot();
+    public void UpdateAll() {
+        UpdatePlayer();
+        UpdateBag();
     }
-    public void UpdatePlayer(Inventory inven) {
+    public void UpdatePlayer() {
+        Inventory inven = RoomManager.instance.LocalPlayer.GetComponent<Inventory>();
         //캐릭터 아이콘
         Image_Player.sprite = inven.PlayerIcon;
         //헬멧
@@ -92,9 +101,10 @@ public class UI_Inventory : MonoBehaviour, IPointerClickHandler {
         //else
         //    Image_SecondaryWeapon.sprite = null;
     }
-    public void UpdateBag(Inventory inven) {
+    public void UpdateBag() {
+        Inventory inven = RoomManager.instance.LocalPlayer.GetComponent<Inventory>();
         //가방이 없으면 없다고 표시
-        if(inven.bag == null) {
+        if (inven.bag == null) {
             Group.SetActive(false);
         }
         //가방이 있으면 가방 내 아이템 표시
@@ -115,12 +125,40 @@ public class UI_Inventory : MonoBehaviour, IPointerClickHandler {
 
             Group.SetActive(true);
         }
-
-
-
     }
-    public void UpdateLoot(Inventory inven = null) {
+    public void UpdateLoot(Inventory box = null) {
+        if (box == null) {
+            Group_Equip.SetActive(false);
+            Group_Bag.SetActive(false);
+            Group_PrimaryWeapon.SetActive(false);
+        }
+        else {
+            switch (box.GetComponent<LootBox>()?.type) {
+                case ItemInfo.Type.box:
+                    Group_Bag.SetActive(true);
+                    Debug.Log("가방 속 내용물 보여주기");
+                    Text_LootSize.text = box.bag.currentSize.ToString() + "/" + box.GetComponent<Inventory>().bag.MaxSize.ToString();
 
+                    for (int i = 0; i < Image_InLoot.transform.childCount; i++) {
+                        Destroy(Image_InLoot.rectTransform.GetChild(i).gameObject);
+                    }
+
+                    for (int i = 0; i < box.bag.transform.childCount; i++) {
+                        Image item = Instantiate(Image_Item).GetComponent<Image>();
+                        item.sprite = box.bag.transform.GetChild(i).GetComponent<ItemInfo>().ItemIcon;
+                        item.transform.SetParent(Image_InLoot.transform);
+                        item.GetComponent<Clickable>().info = box.bag.transform.GetChild(i).GetComponent<ItemInfo>();
+                    }
+                    break;
+                case ItemInfo.Type.body:
+                    Group_Equip.SetActive(true);
+                    Group_Bag.SetActive(true);
+                    Group_PrimaryWeapon.SetActive(true);
+                    Debug.Log("인벤 속 내용물 보여주기");
+                    break;
+            }
+
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData) {

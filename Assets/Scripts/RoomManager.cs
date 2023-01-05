@@ -9,7 +9,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 {
     public static RoomManager instance;
     public GameObject[] SpawnPoints;
-
+    public GameObject LocalPlayer;
     [HideInInspector]
     public Transform pos;
     public bool escape;

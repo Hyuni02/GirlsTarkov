@@ -32,6 +32,7 @@ public class PlayerManager : MonoBehaviour
         }
         player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", character), RoomManager.instance.pos.position, RoomManager.instance.pos.rotation, 0, new object[] { pv.ViewID });
         FindObjectOfType<CinemachineVirtualCamera>().Follow = player.transform.GetChild(0).transform;
+        RoomManager.instance.LocalPlayer = player;
     }
 
     public void Die() {

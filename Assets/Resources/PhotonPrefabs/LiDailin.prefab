@@ -2253,7 +2253,7 @@ MonoBehaviour:
     m_Bits: 257
   interactColliderMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 129
   debugTransform: {fileID: 0}
 --- !u!81 &5847752856073117869
 AudioListener:
