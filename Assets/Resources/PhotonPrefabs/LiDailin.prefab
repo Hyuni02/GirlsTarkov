@@ -2280,6 +2280,7 @@ MonoBehaviour:
   Armor: {fileID: 0}
   main_Weapon: {fileID: 0}
   bag: {fileID: 0}
+  lastInteract: {fileID: 0}
 --- !u!114 &7973006231113968524
 MonoBehaviour:
   m_ObjectHideFlags: 0

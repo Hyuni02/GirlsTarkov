@@ -120,5 +120,6 @@ public class ItemInfo : MonoBehaviour
         transform.SetParent(to);
         from.GetComponent<ItemContainerInfo>()?.UpdateContainerState();
         to.GetComponent<ItemContainerInfo>()?.UpdateContainerState();
+        print(name + " : " + from.name + " -> " + to.name);
     }
 }

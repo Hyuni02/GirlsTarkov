@@ -90,6 +90,7 @@ public class ThirdPersonShooterController : MonoBehaviour {
         if (starterAssetsInputs.interact) {
             if (Physics.Raycast(ray, out RaycastHit _hit, 15f, interactColliderMask)) {
                 _hit.collider.GetComponent<ItemInfo>()?.Interact(gameObject);
+                RoomManager.instance.LocalPlayer.GetComponent<Inventory>().lastInteract = _hit.transform;
             }
             starterAssetsInputs.interact = false;
         }

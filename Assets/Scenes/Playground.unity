@@ -455,6 +455,7 @@ GameObject:
   - component: {fileID: 113847566}
   - component: {fileID: 113847565}
   - component: {fileID: 113847567}
+  - component: {fileID: 113847568}
   m_Layer: 5
   m_Name: PrimaryWeapon
   m_TagString: Untagged
@@ -535,6 +536,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 0}
+  preParent: {fileID: 0}
+--- !u!114 &113847568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113847563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &160349647
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,6 +626,7 @@ GameObject:
   - component: {fileID: 230921315}
   - component: {fileID: 230921314}
   - component: {fileID: 230921316}
+  - component: {fileID: 230921317}
   m_Layer: 5
   m_Name: Armor
   m_TagString: Untagged
@@ -689,6 +704,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 0}
+  preParent: {fileID: 0}
+--- !u!114 &230921317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230921312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &246937433
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,6 +857,7 @@ MonoBehaviour:
   Armor: {fileID: 0}
   main_Weapon: {fileID: 0}
   bag: {fileID: 1339075004}
+  lastInteract: {fileID: 0}
 --- !u!1 &249857409
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,6 +870,7 @@ GameObject:
   - component: {fileID: 249857412}
   - component: {fileID: 249857411}
   - component: {fileID: 249857413}
+  - component: {fileID: 249857414}
   m_Layer: 5
   m_Name: SecondaryWeapon
   m_TagString: Untagged
@@ -918,6 +948,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 0}
+  preParent: {fileID: 0}
+--- !u!114 &249857414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249857409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &268882925
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +972,7 @@ GameObject:
   - component: {fileID: 268882926}
   - component: {fileID: 268882928}
   - component: {fileID: 268882927}
+  - component: {fileID: 268882929}
   m_Layer: 5
   m_Name: Helmet
   m_TagString: Untagged
@@ -993,6 +1037,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268882925}
   m_CullTransparentMesh: 1
+--- !u!114 &268882929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268882925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &375969837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,6 +1166,7 @@ GameObject:
   - component: {fileID: 465803897}
   - component: {fileID: 465803899}
   - component: {fileID: 465803898}
+  - component: {fileID: 465803900}
   m_Layer: 5
   m_Name: Armor
   m_TagString: Untagged
@@ -1174,6 +1231,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465803896}
   m_CullTransparentMesh: 1
+--- !u!114 &465803900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465803896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &484748816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,6 +1465,7 @@ GameObject:
   - component: {fileID: 514739151}
   - component: {fileID: 514739150}
   - component: {fileID: 514739149}
+  - component: {fileID: 514739152}
   m_Layer: 5
   m_Name: PrimaryWeapon_Muzzle
   m_TagString: Untagged
@@ -1435,6 +1505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 0}
+  preParent: {fileID: 0}
 --- !u!114 &514739150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1473,6 +1544,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514739147}
   m_CullTransparentMesh: 1
+--- !u!114 &514739152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514739147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &542508511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,6 +1631,7 @@ GameObject:
   - component: {fileID: 547893418}
   - component: {fileID: 547893420}
   - component: {fileID: 547893419}
+  - component: {fileID: 547893421}
   m_Layer: 5
   m_Name: Bag
   m_TagString: Untagged
@@ -1612,6 +1696,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547893417}
   m_CullTransparentMesh: 1
+--- !u!114 &547893421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547893417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &585271690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,6 +1720,7 @@ GameObject:
   - component: {fileID: 585271693}
   - component: {fileID: 585271692}
   - component: {fileID: 585271694}
+  - component: {fileID: 585271695}
   m_Layer: 5
   m_Name: PrimaryWeapon_Sight
   m_TagString: Untagged
@@ -1701,6 +1798,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 0}
+  preParent: {fileID: 0}
+--- !u!114 &585271695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585271690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &663937901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,6 +1874,7 @@ MonoBehaviour:
   Armor: {fileID: 0}
   main_Weapon: {fileID: 0}
   bag: {fileID: 0}
+  lastInteract: {fileID: 0}
 --- !u!65 &663937904
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1905,6 +2016,7 @@ GameObject:
   - component: {fileID: 839577753}
   - component: {fileID: 839577752}
   - component: {fileID: 839577751}
+  - component: {fileID: 839577754}
   m_Layer: 5
   m_Name: PrimaryWeapon_Grip
   m_TagString: Untagged
@@ -1944,6 +2056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 0}
+  preParent: {fileID: 0}
 --- !u!114 &839577752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1982,6 +2095,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839577749}
   m_CullTransparentMesh: 1
+--- !u!114 &839577754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839577749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &865583731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2768,6 +2893,7 @@ GameObject:
   - component: {fileID: 1047205315}
   - component: {fileID: 1047205314}
   - component: {fileID: 1047205316}
+  - component: {fileID: 1047205317}
   m_Layer: 5
   m_Name: PrimaryWeapon_Muzzle
   m_TagString: Untagged
@@ -2845,6 +2971,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 0}
+  preParent: {fileID: 0}
+--- !u!114 &1047205317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047205312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1047514814
 GameObject:
   m_ObjectHideFlags: 0
@@ -3082,6 +3221,7 @@ GameObject:
   - component: {fileID: 1287485193}
   - component: {fileID: 1287485192}
   - component: {fileID: 1287485194}
+  - component: {fileID: 1287485195}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -3159,6 +3299,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 0}
+  preParent: {fileID: 0}
+--- !u!114 &1287485195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287485190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1306727736
 GameObject:
   m_ObjectHideFlags: 0
@@ -3208,6 +3361,7 @@ GameObject:
   - component: {fileID: 1329233408}
   - component: {fileID: 1329233407}
   - component: {fileID: 1329233406}
+  - component: {fileID: 1329233409}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -3296,6 +3450,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329233404}
   m_CullTransparentMesh: 1
+--- !u!114 &1329233409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329233404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1339075003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3450,6 +3616,7 @@ GameObject:
   - component: {fileID: 1358738756}
   - component: {fileID: 1358738755}
   - component: {fileID: 1358738757}
+  - component: {fileID: 1358738758}
   m_Layer: 5
   m_Name: Image_InBag
   m_TagString: Untagged
@@ -3538,6 +3705,18 @@ MonoBehaviour:
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1358738758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358738753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1402827283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3984,6 +4163,7 @@ GameObject:
   - component: {fileID: 1689965306}
   - component: {fileID: 1689965305}
   - component: {fileID: 1689965304}
+  - component: {fileID: 1689965307}
   m_Layer: 5
   m_Name: PrimaryWeapon_Sight
   m_TagString: Untagged
@@ -4023,6 +4203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 0}
+  preParent: {fileID: 0}
 --- !u!114 &1689965305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4061,6 +4242,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689965302}
   m_CullTransparentMesh: 1
+--- !u!114 &1689965307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689965302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1750994800
 GameObject:
   m_ObjectHideFlags: 0
@@ -4148,6 +4341,7 @@ GameObject:
   - component: {fileID: 1756344678}
   - component: {fileID: 1756344677}
   - component: {fileID: 1756344676}
+  - component: {fileID: 1756344679}
   m_Layer: 5
   m_Name: PrimaryWeapon
   m_TagString: Untagged
@@ -4190,6 +4384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 0}
+  preParent: {fileID: 0}
 --- !u!114 &1756344677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4228,6 +4423,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756344674}
   m_CullTransparentMesh: 1
+--- !u!114 &1756344679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756344674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1761853270
 GameObject:
   m_ObjectHideFlags: 0
@@ -4473,6 +4680,7 @@ GameObject:
   - component: {fileID: 1930824506}
   - component: {fileID: 1930824505}
   - component: {fileID: 1930824507}
+  - component: {fileID: 1930824508}
   m_Layer: 5
   m_Name: Bag
   m_TagString: Untagged
@@ -4550,6 +4758,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 0}
+  preParent: {fileID: 0}
+--- !u!114 &1930824508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930824503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1936182319
 GameObject:
   m_ObjectHideFlags: 0
@@ -4638,6 +4859,7 @@ GameObject:
   - component: {fileID: 1972074932}
   - component: {fileID: 1972074931}
   - component: {fileID: 1972074933}
+  - component: {fileID: 1972074934}
   m_Layer: 5
   m_Name: Helmet
   m_TagString: Untagged
@@ -4715,6 +4937,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 0}
+  preParent: {fileID: 0}
+--- !u!114 &1972074934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972074929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2036770741
 GameObject:
   m_ObjectHideFlags: 0
@@ -4757,6 +4992,7 @@ GameObject:
   - component: {fileID: 2055056121}
   - component: {fileID: 2055056120}
   - component: {fileID: 2055056122}
+  - component: {fileID: 2055056123}
   m_Layer: 5
   m_Name: PrimaryWeapon_Grip
   m_TagString: Untagged
@@ -4834,6 +5070,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 0}
+  preParent: {fileID: 0}
+--- !u!114 &2055056123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055056118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19622c7f7faee5449a8416b09a918563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2060705509
 PrefabInstance:
   m_ObjectHideFlags: 0
