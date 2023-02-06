@@ -52,11 +52,11 @@ public class ThirdPersonShooterController : MonoBehaviour {
         //    animator.SetBool("Aim", true);
         //    animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1),1f,Time.deltaTime * 20f));
 
-            Vector3 worldAimTarget = mouseWorldPosition;
-            worldAimTarget.y = transform.position.y;
-            Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
+            //Vector3 worldAimTarget = mouseWorldPosition;
+            //worldAimTarget.y = transform.position.y;
+            //Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
 
-            transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
+            //transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
         //}
         //else {
         //    aimVirtualCamera.gameObject.SetActive(false);
