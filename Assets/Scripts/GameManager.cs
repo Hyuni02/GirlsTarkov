@@ -63,10 +63,12 @@ public class GameManager : MonoBehaviourPunCallbacks
         foreach (Player p in players) {
             Instantiate(PlayerItem, PlayerListContainer).GetComponent<PlayerItem>().SetUp(p);
         }
-
+        Button_Start.SetActive(true);
         Button_Start.SetActive(PhotonNetwork.IsMasterClient);
     }
     public override void OnLeftRoom() {
+        Text_RoomCode.text = "Room.####";
+        Button_Start.SetActive(false);
         Panels[2].SetActive(false);
     }
     public override void OnCreateRoomFailed(short returnCode, string message) {

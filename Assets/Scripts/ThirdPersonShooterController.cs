@@ -30,8 +30,8 @@ public class ThirdPersonShooterController : MonoBehaviour {
 
     private void Start() {
         GameObject.FindGameObjectWithTag("NormalCamera").GetComponent<CinemachineVirtualCamera>().Follow = transform.GetChild(0);
-        aimVirtualCamera = GameObject.FindGameObjectWithTag("AimCamera").GetComponent<CinemachineVirtualCamera>();
-        aimVirtualCamera.Follow = transform.GetChild(0);
+        //aimVirtualCamera = GameObject.FindGameObjectWithTag("AimCamera").GetComponent<CinemachineVirtualCamera>();
+        //aimVirtualCamera.Follow = transform.GetChild(0);
         crosshair = GameObject.FindGameObjectWithTag("crosshair");
         debugTransform = GameObject.Find("Sphere").transform;
     }
@@ -44,38 +44,38 @@ public class ThirdPersonShooterController : MonoBehaviour {
             mouseWorldPosition = hit.point;
         }
 
-        if (starterAssetsInputs.aim) {
-            aimVirtualCamera.gameObject.SetActive(true);
-            thirdPersonController.SetSensitivity(aimSensitivity);
-            thirdPersonController.SetRotateOnMove(false);
-            crosshair.gameObject.SetActive(true);
-            animator.SetBool("Aim", true);
-            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1),1f,Time.deltaTime * 20f));
+        //if (starterAssetsInputs.aim) {
+        //    aimVirtualCamera.gameObject.SetActive(true);
+        //    thirdPersonController.SetSensitivity(aimSensitivity);
+        //    thirdPersonController.SetRotateOnMove(false);
+        //    crosshair.gameObject.SetActive(true);
+        //    animator.SetBool("Aim", true);
+        //    animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1),1f,Time.deltaTime * 20f));
 
             Vector3 worldAimTarget = mouseWorldPosition;
             worldAimTarget.y = transform.position.y;
             Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
 
             transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
-        }
-        else {
-            aimVirtualCamera.gameObject.SetActive(false);
-            thirdPersonController.SetSensitivity(normalSensitivity);
-            thirdPersonController.SetRotateOnMove(true);
-            crosshair.SetActive(false);
-            animator.SetBool("Aim", true);
-            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 20f));
-        }
+        //}
+        //else {
+        //    aimVirtualCamera.gameObject.SetActive(false);
+        //    thirdPersonController.SetSensitivity(normalSensitivity);
+        //    thirdPersonController.SetRotateOnMove(true);
+        //    crosshair.SetActive(false);
+        //    animator.SetBool("Aim", true);
+        //    animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 20f));
+        //}
 
-        if (starterAssetsInputs.shoot) {
-            inventory.main_Weapon.GetComponent<Gun>().Shoot();
-            starterAssetsInputs.shoot = false;
-        }
+        //if (starterAssetsInputs.shoot) {
+        //    inventory.main_Weapon.GetComponent<Gun>().Shoot();
+        //    starterAssetsInputs.shoot = false;
+        //}
 
-        if (starterAssetsInputs.reload) {
-            inventory.main_Weapon.GetComponent<Gun>().Reload();
-            starterAssetsInputs.reload= false;
-        }
+        //if (starterAssetsInputs.reload) {
+        //    inventory.main_Weapon.GetComponent<Gun>().Reload();
+        //    starterAssetsInputs.reload= false;
+        //}
     }
 
     public void Escape() {

@@ -11,8 +11,8 @@ public class Inventory : MonoBehaviour
     public GameObject bag;
 
     private void Start() {
-        main_Weapon = GetComponentInChildren<Gun>().gameObject;
-        vest = GameObject.Find("Vest1");
-        bag = GameObject.Find("Bag1");
+        //main_Weapon = GetComponentInChildren<Gun>().gameObject;
+        //vest = GameObject.Find("Vest1");
+        //bag = GameObject.Find("Bag1");
     }
 }
