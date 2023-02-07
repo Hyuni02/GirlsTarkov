@@ -10,4 +10,8 @@ public class Bag : Item
     [Header("Total State")]
     public float Total_Size;
     public float Total_Weight;
+
+    public void UpdateToTal() {
+
+    }
 }

@@ -69,10 +69,28 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Respawn",
+                    "name": "Interact",
                     "type": "Button",
                     "id": "ac62ee01-9860-44dd-90ed-b8a7f4cf06eb",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Inventory",
+                    "type": "Button",
+                    "id": "81487f91-5c3f-4614-bd72-b6b80f2cac08",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Scroll",
+                    "type": "PassThrough",
+                    "id": "17f38a70-5de1-4216-ba36-3db6d5927ad8",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -291,11 +309,33 @@
                 {
                     "name": "",
                     "id": "7a951b14-2ed5-45dd-81bf-a912e4d0f1a2",
-                    "path": "<Keyboard>/f",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
-                    "action": "Respawn",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "311c41b8-fcec-4587-b3fd-44d6fec711fc",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "81a6fdd9-5a76-432e-909c-2f2a6cefb948",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Scroll",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

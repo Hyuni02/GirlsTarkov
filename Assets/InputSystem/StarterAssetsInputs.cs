@@ -1,6 +1,8 @@
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI;
+
 #endif
 
 namespace StarterAssets
@@ -15,7 +17,9 @@ namespace StarterAssets
 		public bool aim;
 		public bool shoot;
 		public bool reload;
-		public bool respawn;
+		public bool interact;
+		public bool inventory;
+		public float scroll;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -57,8 +61,14 @@ namespace StarterAssets
 		public void OnReload(InputValue value) {
 			ReloadInput(value.isPressed);
 		}
-		public void OnRespawn(InputValue value) {
-			RespawnInput(value.isPressed);
+		public void OnInteract(InputValue value) {
+            InteractInput(value.isPressed);
+		}
+		public void OnInventory(InputValue value) {
+			InventoryInput(value.isPressed);
+		}
+		public void OnScroll(InputValue value) {
+			ScrollInput(value.Get<float>());
 		}
 #endif
 
@@ -92,8 +102,14 @@ namespace StarterAssets
 		public void ReloadInput(bool newReloadState) {
 			reload = newReloadState;
 		}
-		public void RespawnInput(bool newRespawnState) {
-			respawn = newRespawnState;
+		public void InteractInput(bool newInteractState) {
+			interact = newInteractState;
+		}
+		public void InventoryInput(bool newOpenInventoryState) {
+			inventory = newOpenInventoryState;
+		}
+		public void ScrollInput(float newScrollState) {
+			scroll = newScrollState;
 		}
 
         private void OnApplicationFocus(bool hasFocus)

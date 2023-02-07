@@ -6,6 +6,20 @@ public class Weapon : Item
 {
     public enum WeaponType { Primary, Secondary }
 
-    [Header("Weapon Type")]
+    [Header("Weapon Info")]
     public WeaponType weaponType;
+    public Sprite equipedIcon;
+
+    public void Fire() {
+
+    }
+    public void Aim() {
+
+    }
+    public void Eject() {
+
+    }
+    public void Reload() {
+
+    }
 }
