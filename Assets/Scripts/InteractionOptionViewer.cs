@@ -27,5 +27,13 @@ public class InteractionOptionViewer : MonoBehaviour
         //선택 옵션 강조
         transform.GetChild(index).GetComponent<TMP_Text>().color = Color.yellow;
         option = transform.GetChild(index).GetComponent<TMP_Text>().text;
+
+        # region 이 부분은 사소한 버그를 잡기 위한 스파게티 부분
+        if (!transform.GetChild(index).gameObject.activeSelf) {
+            index++;
+            HighlightIndex();
+            return;
+        }
+        #endregion
     }
 }
